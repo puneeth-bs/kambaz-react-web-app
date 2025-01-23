@@ -1,11 +1,13 @@
 export default function AssignmentEditor() {
   return (
     <div id="wd-assignments">
-      <h3 id="wd-assignment-name">Assignment Name</h3>
+      <h3 id="wd-name">Assignment Name</h3>
       <table style={{ borderSpacing: "10px" }}>
         <tbody>
           <tr>
-            <td>Title:</td>
+            <td>
+              <label htmlFor="wd-assignment-title">Title:</label>
+            </td>
             <td>
               <input
                 type="text"
@@ -17,7 +19,9 @@ export default function AssignmentEditor() {
             </td>
           </tr>
           <tr>
-            <td>Description:</td>
+            <td>
+              <label htmlFor="wd-assignment-description">Description:</label>
+            </td>
             <td>
               <textarea
                 id="wd-assignment-description"
@@ -28,34 +32,42 @@ export default function AssignmentEditor() {
             </td>
           </tr>
           <tr>
-            <td>Points:</td>
+            <td>
+              <label htmlFor="wd-points">Points:</label>
+            </td>
             <td>
               <input
                 type="number"
-                id="wd-assignment-points"
+                id="wd-points"
                 value="100"
                 readOnly
               />
             </td>
           </tr>
           <tr>
-            <td>Assignment Group:</td>
             <td>
-              <select id="wd-assignment-group">
+              <label htmlFor="wd-group">Assignment Group:</label>
+            </td>
+            <td>
+              <select id="wd-group">
                 <option value="assignments">ASSIGNMENTS</option>
               </select>
             </td>
           </tr>
           <tr>
-            <td>Display Grade as:</td>
             <td>
-              <select id="wd-display-grade">
+              <label htmlFor="wd-display-grade-as">Display Grade as:</label>
+            </td>
+            <td>
+              <select id="wd-display-grade-as">
                 <option value="percentage">Percentage</option>
               </select>
             </td>
           </tr>
           <tr>
-            <td>Submission Type:</td>
+            <td>
+              <label htmlFor="wd-submission-type">Submission Type:</label>
+            </td>
             <td>
               <select id="wd-submission-type">
                 <option value="online">Online</option>
@@ -66,35 +78,37 @@ export default function AssignmentEditor() {
             <td></td>
             <td>
               <div id="wd-online-entry-options" style={{ display: "flex", flexDirection: "column" }}>
-                <label>
-                  <text>Online Option Entry</text>
+              Online Entry Options
+                <label htmlFor="wd-text-entry">
+                  <input type="checkbox" id="wd-text-entry" /> Text Entry
                 </label>
-                <label>
-                  <input type="checkbox" /> Text Entry
+                <label htmlFor="wd-website-url">
+                  <input type="checkbox" id="wd-website-url" /> Website URL
                 </label>
-                <label>
-                  <input type="checkbox" /> Website URL
+                <label htmlFor="wd-media-recordings">
+                  <input type="checkbox" id="wd-media-recordings" /> Media Recordings
                 </label>
-                <label>
-                  <input type="checkbox" /> Media Recordings
+                <label htmlFor="wd-student-annotation">
+                  <input type="checkbox" id="wd-student-annotation" /> Student Annotation
                 </label>
-                <label>
-                  <input type="checkbox" /> Student Annotation
-                </label>
-                <label>
-                  <input type="checkbox" /> File Uploads
+                <label htmlFor="wd-file-upload">
+                  <input type="checkbox" id="wd-file-upload" /> File Uploads
                 </label>
               </div>
             </td>
           </tr>
           <tr>
-            <td>Assign To:</td>
+            <td>
+              <label htmlFor="wd-assign-to">Assign To:</label>
+            </td>
             <td>
               <input type="text" id="wd-assign-to" value="Everyone" readOnly />
             </td>
           </tr>
           <tr>
-            <td>Due:</td>
+            <td>
+              <label htmlFor="wd-due-date">Due:</label>
+            </td>
             <td>
               <input type="date" id="wd-due-date" value="2024-05-13" readOnly />
             </td>

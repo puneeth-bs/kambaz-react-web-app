@@ -19,7 +19,13 @@ export default function Lab1() {
       </div>
       <div id="wd-p-tag">
         <h4>Paragraph Tag</h4>
-        <p id="wd-p-1"> ... </p>
+        <p id="wd-p-1">
+          This is a paragraph. We often separate a long set of sentences with
+          vertical spaces to make the text easier to read. Browsers ignore
+          vertical white spaces and render all the text as one single set of
+          sentences. To force the browser to add vertical spacing, wrap the
+          paragraphs you want to separate with the paragraph tag{" "}
+        </p>
         <p id="wd-p-2">
           This is the first paragraph. The paragraph tag is used to format
           vertical gaps between long pieces of text like this one.
@@ -49,8 +55,13 @@ export default function Lab1() {
           <li>Flip and cook the other side.</li>
           <li>Serve and enjoy!</li>
         </ol>
-        My favorite recipe:
-        <ol id="wd-your-favorite-recipe">{/* complete on your own */}</ol>
+        My favorite recipe: Warm Oat Meal
+        <ol id="wd-your-favorite-recipe">
+          <li>Soak oats</li>
+          <li>Add oats into boiling water.</li>
+          <li>Garnish it with blue berries.</li>
+          <li>Pour some honey at the top.</li>
+        </ol>
       </div>
       <div>
         <h5>Unordered List Tag</h5>
@@ -63,7 +74,11 @@ export default function Lab1() {
           <li>The Forever War</li>
         </ul>
         Your favorite books (in no particular order)
-        <ul id="wd-your-books">{/* complete on your own */}</ul>
+        <ul id="wd-your-books">
+          <li>Sapiens : Yuval Noah Harari</li>
+          <li>21 Lessons for 21st Century</li>
+          <li>Survielence Capitalism</li>
+        </ul>
       </div>
       <div id="wd-tables">
         <h4>Table Tag</h4>
@@ -81,12 +96,60 @@ export default function Lab1() {
               <td>Q1</td>
               <td>HTML</td>
               <td>2/3/21</td>
-              <td>85</td>
+              <td>90</td>
             </tr>
             <tr>
               <td>Q2</td>
               <td>CSS</td>
-              <td>2/10/21</td>
+              <td>2/11/21</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>Q3</td>
+              <td>Java</td>
+              <td>2/12/21</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>Q4</td>
+              <td>Python</td>
+              <td>2/13/21</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>Q5</td>
+              <td>SQL</td>
+              <td>2/14/21</td>
+              <td>85</td>
+            </tr>
+            <tr>
+              <td>Q6</td>
+              <td>Rust</td>
+              <td>2/15/21</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>Q7</td>
+              <td>GoLang</td>
+              <td>2/16/21</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>Q8</td>
+              <td>ErLang</td>
+              <td>2/17/21</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>Q9</td>
+              <td>Spring Boot</td>
+              <td>2/18/21</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>Q10</td>
+              <td>MERN Stack</td>
+              <td>2/19/21</td>
               <td>90</td>
             </tr>
           </tbody>
@@ -245,10 +308,10 @@ export default function Lab1() {
       <div>
         <h4>Anchor tag</h4>
         Please
-        <a href="https://www.lipsum.com" id="wd-github">
-          click here 
+        <a href="https://github.com/puneeth-bs/kambaz-react-web-app" id="wd-github">
+          click here
         </a>
-        to go to github repository 
+        to go to github repository
         <br />
       </div>
     </div>

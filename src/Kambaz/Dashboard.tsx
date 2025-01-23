@@ -22,7 +22,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <img src="/images/course_1.webp" width={200} />
+            <img src="/images/course_1.jpg" width={200} />
             <div>
               <h5>CS1234 React JS</h5>
               <p className="wd-dashboard-course-title">
@@ -42,7 +42,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <img src="/images/course_1.webp" width={200} />
+            <img src="/images/course_1.jpg" width={200} />
             <div>
               <h5>CS1234 Python</h5>
               <p className="wd-dashboard-course-title">Basics of Python</p>
@@ -60,7 +60,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <img src="/images/course_1.webp" width={200} />
+            <img src="/images/course_1.jpg" width={200} />
             <div>
               <h5>CS1234 Java</h5>
               <p className="wd-dashboard-course-title">Basics of Java</p>
@@ -78,7 +78,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <img src="/images/course_1.webp" width={200} />
+            <img src="/images/course_1.jpg" width={200} />
             <div>
               <h5>CS1234 SQL</h5>
               <p className="wd-dashboard-course-title">Basics of SQL</p>
@@ -96,7 +96,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <img src="/images/course_1.webp" width={200} />
+            <img src="/images/course_1.jpg" width={200} />
             <div>
               <h5>CS1234 JavaScript</h5>
               <p className="wd-dashboard-course-title">Basics of JavaScript</p>
@@ -114,7 +114,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <img src="/images/course_1.webp" width={200} />
+            <img src="/images/course_1.jpg" width={200} />
             <div>
               <h5>CS1234 GoLang</h5>
               <p className="wd-dashboard-course-title">Basics of GoLang</p>
@@ -132,7 +132,7 @@ export default function Dashboard() {
             className="wd-dashboard-course-link"
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <img src="/images/course_1.webp" width={200} />
+            <img src="/images/course_1.jpg" width={200} />
             <div>
               <h5>CS1234 Rust</h5>
               <p className="wd-dashboard-course-title">Basics of Rust</p>
