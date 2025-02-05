@@ -1,7 +1,7 @@
-import React from "react";
+
 import { Col, Row } from "react-bootstrap";
 
-function BootStrapGrid() {
+function BootstrapGrid() {
   return (
     <div>
       <h2>Bootstrap</h2>
@@ -193,4 +193,4 @@ function BootStrapGrid() {
   );
 }
 
-export default BootStrapGrid;
+export default BootstrapGrid;

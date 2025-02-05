@@ -13,7 +13,7 @@ import Padding from "./Padding";
 import Positions from "./Positions";
 import ReactIconsSampler from "./ReactIcons";
 import Zindex from "./Zindex";
-import BootStrapGrid from "./BootStrapGrid";
+import BootstrapGrid from "./BootstrapGrid";
 import ScreenSizeLabel from "./ScreenSizeLabel";
 import BootstrapTables from "./BootstrapTables";
 import BootstrapLists from "./BootstrapLists";
@@ -89,7 +89,7 @@ export default function Lab1() {
         <GridLayout />
         <Flex />
         <ReactIconsSampler />
-        <BootStrapGrid />
+        <BootstrapGrid />
         <ScreenSizeLabel />
         <BootstrapTables />
         <BootstrapLists />

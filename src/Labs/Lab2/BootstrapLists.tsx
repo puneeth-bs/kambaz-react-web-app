@@ -1,4 +1,4 @@
-import React from "react";
+
 import { ListGroup } from "react-bootstrap";
 
 function BootstrapLists() {
@@ -52,6 +52,7 @@ function BootstrapLists() {
           </ListGroup.Item>
         </ListGroup>
       </div>
+
     </div>
   );
 }
