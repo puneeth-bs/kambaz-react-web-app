@@ -13,12 +13,12 @@ import Padding from "./Padding";
 import Positions from "./Positions";
 import ReactIconsSampler from "./ReactIcons";
 import Zindex from "./Zindex";
-import BootstrapGrid from "./BootstrapGrid";
 import ScreenSizeLabel from "./ScreenSizeLabel";
 import BootstrapTables from "./BootstrapTables";
 import BootstrapLists from "./BootstrapLists";
 import BootstrapForms from "./BootstrapForms";
 import BootstrapNavigation from "./BootstrapNavigation";
+import BootstrapGrid from "./BootStrapGrid";
 export default function Lab1() {
   return (
     <Container>
