@@ -18,7 +18,7 @@ import BootstrapTables from "./BootstrapTables";
 import BootstrapLists from "./BootstrapLists";
 import BootstrapForms from "./BootstrapForms";
 import BootstrapNavigation from "./BootstrapNavigation";
-import BootstrapGrid from "./BootStrapGrid";
+import BootstrapGrid from "./BootstrapGrid";
 export default function Lab1() {
   return (
     <Container>

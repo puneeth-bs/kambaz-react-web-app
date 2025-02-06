@@ -3,7 +3,7 @@ import AssignmentEditor from "./AssignmentEditor";
 import Assignments from "./Assignments";
 import Home from "./Home";
 import CourseNavigation from "./Navigation";
-import { Navigate, Route, Routes } from "react-router";
+import { Route, Routes } from "react-router";
 import Modules from "./Modules";
 export default function Courses() {
   return (
