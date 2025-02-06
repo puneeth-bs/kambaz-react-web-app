@@ -7,7 +7,7 @@ import {
   Col,
 } from "react-bootstrap";
 import { FaCheckCircle, FaPlus, FaEllipsisV } from "react-icons/fa";
-import "./Modules.css"; // Custom styles for necessary enhancements
+import "./modules.css"; // Custom styles for necessary enhancements
 
 export default function Modules() {
   return (
