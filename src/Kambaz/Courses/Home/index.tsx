@@ -1,16 +1,16 @@
 import Modules from "../Modules";
 import CourseStatus from "./Status";
+import "./home.css"
+
 export default function Home() {
   return (
-    <table id="wd-home">
-      <tr>
-        <td valign="top">
-          <Modules />
-        </td>
-        <td valign="top">
-          <CourseStatus />
-        </td>
-      </tr>
-    </table>
-);}
-
+    <div className="home-container">
+      <div className="modules">
+        <Modules />
+      </div>
+      <div className="course-status">
+        <CourseStatus />
+      </div>
+    </div>
+  );
+}
