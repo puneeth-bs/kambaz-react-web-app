@@ -1,6 +1,6 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./Dashboard.css"; // External CSS for styling
+import "./dashboard.css"; // External CSS for styling
 
 export default function Dashboard() {
   return (
