@@ -7,7 +7,7 @@ import Flex from "./Flex";
 import Float from "./Float";
 import ForegroundColors from "./ForegroundColors";
 import GridLayout from "./GridLayout";
-import "./index.css";
+import "./lab2.css";
 import Margins from "./Margins";
 import Padding from "./Padding";
 import Positions from "./Positions";

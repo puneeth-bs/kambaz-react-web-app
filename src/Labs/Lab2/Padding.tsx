@@ -1,4 +1,4 @@
-import "./index.css";
+import "./lab2.css";
 export default function Padding() {
   return (
     <div id="wd-css-paddings">

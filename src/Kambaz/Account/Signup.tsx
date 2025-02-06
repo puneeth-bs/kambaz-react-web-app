@@ -1,21 +1,40 @@
+import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 export default function Signup() {
   return (
-    <div id="wd-signup-screen" style={{ paddingLeft: "20px", paddingRight: "20px" }}>
-      <h3>Sign up</h3>
-      <input placeholder="username" className="wd-username" />
-      <br />
-      <input placeholder="password" type="password" className="wd-password" />
-      <br />
-      <input
-        placeholder="verify password"
-        type="password"
-        className="wd-password-verify"
-      />
-      <br />
-      <Link to="/Kambaz/Account/Profile"> Sign up </Link>
-      <br />
-      <Link to="/Kambaz/Account/Signin">Sign in</Link>
-    </div>
+    <Container className="d-flex flex-column align-items-left mt-5">
+    <h3 className="mb-4">Sign Up</h3>
+
+    {/* Username Input */}
+    <Form.Control
+      type="text"
+      placeholder="Username"
+      className="mb-3"
+    />
+
+    {/* Password Input */}
+    <Form.Control
+      type="password"
+      placeholder="Password"
+      className="mb-3"
+    />
+
+    {/* Verify Password Input */}
+    <Form.Control
+      type="password"
+      placeholder="Verify Password"
+      className="mb-3"
+    />
+
+    {/* Sign Up Button */}
+    <Button className="" href="/Kambaz/Account/Profile">
+      Sign Up
+    </Button>
+
+    {/* Sign In Link */}
+    <p className="mt-3" style={{ backgroundColor: "transparent", color : "black" }}>
+      Already have an account? <Link to="/Kambaz/Account/Signin">Sign in</Link>
+    </p>
+  </Container>
   );
 }

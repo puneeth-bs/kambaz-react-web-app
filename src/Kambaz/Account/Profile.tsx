@@ -1,20 +1,30 @@
-import { Link } from "react-router-dom";
+
+import { Container, Form, Button } from "react-bootstrap";
+
 export default function Profile() {
   return (
-    <div id="wd-profile-screen" style={{ paddingLeft: "20px", paddingRight: "20px" }}>
-      <h3>Profile</h3>
-      <input defaultValue="alice" placeholder="username" className="wd-username"/><br/>
-      <input defaultValue="123"   placeholder="password" type="password"
-             className="wd-password" /><br/>
-      <input defaultValue="Alice" placeholder="First Name" id="wd-firstname" /><br/>
-      <input defaultValue="Wonderland" placeholder="Last Name" id="wd-lastname" /><br/>
-      <input defaultValue="2000-01-01" type="date" id="wd-dob" /><br/>
-      <input defaultValue="alice@wonderland" type="email" id="wd-email" /><br/>
-      <select defaultValue="FACULTY" id="wd-role">
-        <option value="USER">User</option>       <option value="ADMIN">Admin</option>
-        <option value="FACULTY">Faculty</option> <option value="STUDENT">Student</option>
-      </select><br/>
-      <Link to="/Kambaz/Account/Signin" >Sign out</Link>
-    </div>
-);}
+    <Container className="profile-container">
+      <h3 className="mb-4">Profile</h3>
+      
+      <Form>
+        <Form.Control className="mb-3" defaultValue="alice" placeholder="Username" />
+        <Form.Control className="mb-3" defaultValue="123" type="password" placeholder="Password" />
+        <Form.Control className="mb-3" defaultValue="Alice" placeholder="First Name" />
+        <Form.Control className="mb-3" defaultValue="Wonderland" placeholder="Last Name" />
+        <Form.Control className="mb-3" type="date" defaultValue="2000-01-01" />
+        <Form.Control className="mb-3" type="email" defaultValue="alice@wonderland.com" />
+        
+        <Form.Select className="mb-3" defaultValue="USER">
+          <option value="USER">User</option>
+          <option value="ADMIN">Admin</option>
+          <option value="FACULTY">Faculty</option>
+          <option value="STUDENT">Student</option>
+        </Form.Select>
 
+        <Button className="w-100" variant="danger" href="/Kambaz/Account/Signin">
+          Signout
+        </Button>
+      </Form>
+    </Container>
+  );
+}

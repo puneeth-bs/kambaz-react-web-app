@@ -1,4 +1,4 @@
-import "./index.css";
+import "./lab2.css";
 export default function BackgroundColors() {
   return (
     <div id="wd-css-background-colors">

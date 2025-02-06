@@ -1,0 +1,10 @@
+.assignment-editor p {
+    background-color: transparent !important;
+    color: black !important;  /* Ensure text remains black */
+
+  }
+  .assignment-editor .card {
+    background-color: #ffffff !important; /* Ensure cards have a white background */
+    color: black !important;  /* Make sure text inside cards is black */
+  }
+  

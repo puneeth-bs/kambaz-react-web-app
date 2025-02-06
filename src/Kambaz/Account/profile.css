@@ -1,0 +1,20 @@
+.profile-container {
+    max-width: 400px;  /* Make it medium width */
+    margin: 0 auto;    /* Center align */
+    padding-top: 20px;
+  }
+  
+  .profile-container h3 {
+    font-weight: bold;
+  }
+  
+  .profile-container .form-control {
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .profile-container .btn-danger {
+    font-size: 18px;
+    padding: 10px;
+  }
+  
