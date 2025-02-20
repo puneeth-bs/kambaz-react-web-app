@@ -1,0 +1,83 @@
+[
+  { 
+      "_id": "A101", 
+      "title": "Propulsion Assignment", 
+      "course": "RS101",
+      "description": "Study of rocket propulsion systems and their applications.",
+      "points": 100,
+      "dueDate": "2024-05-13",
+      "availableDate": "2024-05-06"
+  },
+  { 
+      "_id": "A102", 
+      "title": "Combustion Analysis", 
+      "course": "RS101",
+      "description": "Analyze combustion efficiency in rocket engines.",
+      "points": 100,
+      "dueDate": "2024-05-20",
+      "availableDate": "2024-05-13"
+  },
+  { 
+      "_id": "A103", 
+      "title": "Nozzle Design Project", 
+      "course": "RS101",
+      "description": "Design and optimize rocket nozzles.",
+      "points": 100,
+      "dueDate": "2024-05-27",
+      "availableDate": "2024-05-20"
+  },
+  { 
+      "_id": "A201", 
+      "title": "Aerodynamics Quiz", 
+      "course": "RS102",
+      "description": "Quiz on fundamental aerodynamic principles.",
+      "points": 50,
+      "dueDate": "2024-05-14",
+      "availableDate": "2024-05-07"
+  },
+  { 
+      "_id": "A202", 
+      "title": "Flow Analysis", 
+      "course": "RS102",
+      "description": "Study subsonic and supersonic flow behaviors.",
+      "points": 100,
+      "dueDate": "2024-05-21",
+      "availableDate": "2024-05-14"
+  },
+  { 
+      "_id": "A203", 
+      "title": "Heating Analysis", 
+      "course": "RS102",
+      "description": "Analyze aerodynamic heating and thermal protection.",
+      "points": 100,
+      "dueDate": "2024-05-28",
+      "availableDate": "2024-05-21"
+  },
+  { 
+      "_id": "A301", 
+      "title": "Structural Design Task", 
+      "course": "RS103",
+      "description": "Fundamentals of spacecraft structural design.",
+      "points": 100,
+      "dueDate": "2024-05-15",
+      "availableDate": "2024-05-08"
+  },
+  { 
+      "_id": "A302", 
+      "title": "Orbital Calculations", 
+      "course": "RS103",
+      "description": "Calculate spacecraft orbital parameters.",
+      "points": 100,
+      "dueDate": "2024-05-22",
+      "availableDate": "2024-05-15"
+  },
+  { 
+      "_id": "A303", 
+      "title": "Systems Engineering Exam", 
+      "course": "RS103",
+      "description": "Exam covering spacecraft systems engineering concepts.",
+      "points": 100,
+      "dueDate": "2024-05-29",
+      "availableDate": "2024-05-22"
+  }
+]
