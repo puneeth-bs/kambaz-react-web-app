@@ -27,7 +27,7 @@ export default function Signup() {
     />
 
     {/* Sign Up Button */}
-    <Button className="" href="/Kambaz/Account/Profile">
+    <Button className="" href="#">
       Sign Up
     </Button>
 

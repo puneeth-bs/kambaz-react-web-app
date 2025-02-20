@@ -4,6 +4,8 @@ import { BsGripVertical } from "react-icons/bs";
 import * as db from "../../Database";
 import "./modules.css"; // Custom styles for necessary enhancements
 import { useParams } from "react-router";
+import { FaBan } from "react-icons/fa6";
+import GreenCheckmark from "./GreenCheckmark";
 
 export default function Modules() {
   const { cid } = useParams(); // Get course ID from URL
@@ -31,13 +33,22 @@ export default function Modules() {
           {/* Publish Dropdown */}
           <Dropdown className="d-inline-block me-2">
             <Dropdown.Toggle variant="secondary">
-              ✅ Publish All
+              <GreenCheckmark /> Publish All
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item>Publish all modules and items</Dropdown.Item>
-              <Dropdown.Item>Publish modules only</Dropdown.Item>
-              <Dropdown.Item>Unpublish all modules and items</Dropdown.Item>
-              <Dropdown.Item>Unpublish modules only</Dropdown.Item>
+              <Dropdown.Item>
+                <GreenCheckmark /> Publish all modules and items
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <GreenCheckmark /> Publish modules only
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <FaBan className="text-muted me-2" /> Unpublish all modules and
+                items
+              </Dropdown.Item>
+              <Dropdown.Item>
+                <FaBan className="text-muted me-2" /> Unpublish modules only
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
@@ -68,6 +79,7 @@ export default function Modules() {
                 <div className="d-flex align-items-center">
                   <FaPlus className="text-dark me-3" /> {/* Black Plus Icon */}
                   <FaCheckCircle className="text-success fs-4" />{" "}
+                  {/* <GreenCheckmark /> */}
                   {/* Normal Green Check Circle */}
                 </div>
               </div>
