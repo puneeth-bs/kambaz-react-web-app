@@ -23,6 +23,13 @@ export default function TOC() {
       <Nav.Item>
         <Nav.Link href="#/Kambaz">Kambaz</Nav.Link>
       </Nav.Item>
+
+      {/* My Github */}
+      <Nav.Item>
+        <Nav.Link href="https://github.com/puneeth-bs" target="_blank" rel="noopener noreferrer">
+          My Github Link
+        </Nav.Link>
+      </Nav.Item>
     </Nav>
   );
 }
