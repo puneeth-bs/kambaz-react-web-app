@@ -1,9 +1,16 @@
+import { useParams } from "react-router";
+import * as db from "../../Database"; // Import assignments from database
 import { Button, Container, Form, ListGroup, Row, Col, InputGroup } from "react-bootstrap";
-import { FaCheckCircle } from "react-icons/fa";
-import { FaEllipsisV } from "react-icons/fa";
-import "./assignments.css"
+import { FaCheckCircle, FaEllipsisV } from "react-icons/fa";
+import "./assignments.css";
 
 export default function Assignments() {
+  const { cid } = useParams(); // Get course ID from URL
+  const assignments = db.assignments || []; // Ensure assignments data exists
+
+  // Filter assignments based on selected course
+  const filteredAssignments = assignments.filter((assignment) => assignment.course === cid);
+
   return (
     <Container fluid className="p-3">
       {/* Search and Buttons */}
@@ -14,7 +21,7 @@ export default function Assignments() {
           </InputGroup>
         </Col>
         <Col md="auto">
-          <Button variant="secondary" className="me-2">+ Group</Button>
+          <Button variant="light" className="me-2">+ Group</Button>
           <Button variant="danger">+ Assignment</Button>
         </Col>
       </Row>
@@ -27,59 +34,28 @@ export default function Assignments() {
 
       {/* Assignment List */}
       <ListGroup>
-        {/* Assignment 1 */}
-        <ListGroup.Item className="assignment-item d-flex justify-content-between align-items-center">
-          <div>
-            <a href="#/Kambaz/Courses/1234/Assignments/123" className="assignment-link">
-              <strong>A1</strong>
-            </a>
-            <p className="text-muted mb-1">
-              <span className="text-danger">Multiple Modules</span> | 
-              <strong> Not available until</strong> May 6 at 12:00 AM
-            </p>
-            <p className="text-muted">Due May 13 at 11:59 PM | 100 pts</p>
-          </div>
-          <div>
-            <FaCheckCircle className="text-success me-3 fs-5" />
-            <FaEllipsisV className="text-muted fs-5" />
-          </div>
-        </ListGroup.Item>
-
-        {/* Assignment 2 */}
-        <ListGroup.Item className="assignment-item d-flex justify-content-between align-items-center">
-          <div>
-            <a href="#/Kambaz/Courses/1234/Assignments/124" className="assignment-link">
-              <strong>A2</strong>
-            </a>
-            <p className="text-muted mb-1">
-              <span className="text-danger">Multiple Modules</span> | 
-              <strong> Not available until</strong> May 13 at 12:00 AM
-            </p>
-            <p className="text-muted">Due May 20 at 11:59 PM | 100 pts</p>
-          </div>
-          <div>
-            <FaCheckCircle className="text-success me-3 fs-5" />
-            <FaEllipsisV className="text-muted fs-5" />
-          </div>
-        </ListGroup.Item>
-
-        {/* Assignment 3 */}
-        <ListGroup.Item className="assignment-item d-flex justify-content-between align-items-center">
-          <div>
-            <a href="#/Kambaz/Courses/1234/Assignments/125" className="assignment-link">
-              <strong>A3</strong>
-            </a>
-            <p className="text-muted mb-1">
-              <span className="text-danger">Multiple Modules</span> | 
-              <strong> Not available until</strong> May 20 at 12:00 AM
-            </p>
-            <p className="text-muted">Due May 27 at 11:59 PM | 100 pts</p>
-          </div>
-          <div>
-            <FaCheckCircle className="text-success me-3 fs-5" />
-            <FaEllipsisV className="text-muted fs-5" />
-          </div>
-        </ListGroup.Item>
+        {filteredAssignments.length > 0 ? (
+          filteredAssignments.map((assignment) => (
+            <ListGroup.Item key={assignment._id} className="assignment-item d-flex justify-content-between align-items-center">
+              <div>
+                <a href={`#/Kambaz/Courses/${cid}/Assignments/${assignment._id}`} className="assignment-link">
+                  <strong>{assignment.title}</strong>
+                </a>
+                <p className="text-muted mb-1">
+                  <span className="text-danger">Multiple Modules</span> | 
+                  <strong> Not available until</strong> May 6 at 12:00 AM
+                </p>
+                <p className="text-muted">Due May 13 at 11:59 PM | 100 pts</p>
+              </div>
+              <div>
+                <FaCheckCircle className="text-success me-3 fs-5" />
+                <FaEllipsisV className="text-muted fs-5" />
+              </div>
+            </ListGroup.Item>
+          ))
+        ) : (
+          <p className="text-muted p-3">No assignments available for this course.</p>
+        )}
       </ListGroup>
     </Container>
   );

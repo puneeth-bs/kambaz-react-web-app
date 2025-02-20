@@ -1,7 +1,19 @@
-import { Button, Container, Form, Row, Col, Card } from "react-bootstrap";
+import { useParams, Link } from "react-router-dom";
+import * as db from "../../Database"; // Import assignments from database
+import { Container, Form, Row, Col, Card } from "react-bootstrap";
 import "./assignmenteditor.css";
 
 export default function AssignmentEditor() {
+  const { cid, aid } = useParams(); // Get cid and assignmentId from URL
+  const assignments = db.assignments || []; // Ensure assignments data exists
+
+  // Find the selected assignment
+  const assignment = assignments.find((a) => a._id === aid);
+
+  if (!assignment) {
+    return <p className="text-muted p-3">Assignment not found.</p>;
+  }
+
   return (
     <Container fluid className="p-4">
       <Row>
@@ -11,7 +23,7 @@ export default function AssignmentEditor() {
             <Form.Label>
               <strong>Assignment Name</strong>
             </Form.Label>
-            <Form.Control type="text" value="A1" readOnly />
+            <Form.Control type="text" defaultValue={assignment.title} />
           </Form.Group>
 
           {/* Description Box */}
@@ -44,18 +56,10 @@ export default function AssignmentEditor() {
               Points
             </Form.Label>
             <Col sm={6}>
-              {" "}
-              {/* Adjust the column size for smaller input */}
-              <Form.Control
-                type="number"
-                value="100"
-                readOnly
-                className="small-input"
-              />
+              <Form.Control type="number" defaultValue={assignment.points || 100} className="small-input" />
             </Col>
           </Form.Group>
 
-          {/* Assignment Group & Display Grade (Now Below) */}
           {/* Assignment Group */}
           <Form.Group as={Row} className="mb-3 justify-content-end">
             <Form.Label column sm={4} className="text-end">
@@ -121,7 +125,7 @@ export default function AssignmentEditor() {
                   Due
                 </Form.Label>
                 <Col sm={6}>
-                  <Form.Control type="date" value="2024-05-13" readOnly />
+                  <Form.Control type="date" defaultValue="2024-05-13" />
                 </Col>
               </Form.Group>
 
@@ -133,7 +137,7 @@ export default function AssignmentEditor() {
                       Available from
                     </Form.Label>
                     <Col sm={6}>
-                      <Form.Control type="date" value="2024-05-06" readOnly />
+                      <Form.Control type="date" defaultValue="2024-05-06" />
                     </Col>
                   </Form.Group>
                 </Col>
@@ -143,7 +147,7 @@ export default function AssignmentEditor() {
                       Until
                     </Form.Label>
                     <Col sm={6}>
-                      <Form.Control type="date" value="" />
+                      <Form.Control type="date" defaultValue="" />
                     </Col>
                   </Form.Group>
                 </Col>
@@ -153,8 +157,12 @@ export default function AssignmentEditor() {
 
           {/* Buttons */}
           <div className="d-flex justify-content-end gap-2 mt-3">
-            <Button variant="secondary">Cancel</Button>
-            <Button variant="danger">Save</Button>
+            <Link to={`/Kambaz/Courses/${cid}/Assignments`} className="btn btn-secondary">
+              Cancel
+            </Link>
+            <Link to={`/Kambaz/Courses/${cid}/Assignments`} className="btn btn-danger">
+              Save
+            </Link>
           </div>
         </Col>
       </Row>
