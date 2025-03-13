@@ -1,13 +1,39 @@
-
+import ArrayStateVariable from "./ArrayStateVariable";
+import BooleanStateVariables from "./BooleanStateVariables";
+import ChildStateComponent from "./ChildStateComponent";
+import ClickEvent from "./ClickEvent";
+import Counter from "./Counter";
+import DateStateVariable from "./DateStateVariable";
+import EventObject from "./EventObject";
+import ObjectStateVariable from "./ObjectStateVariable";
+import ParentStateComponent from "./ParentStateComponent";
+import PassingDataOnEvent from "./PassingDataOnEvent";
+import PassingFunctions from "./PassingFunctions";
+import ReduxExamples from "./ReduxExamples";
+import TodoList from "./ReduxExamples/todos/TodoList";
+import StringStateVariables from "./StringStateVariables";
 export default function Lab4() {
-    const q = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    return (
-      <ul>
-        {q.map((s) => (
-          <li key={s}>
-            2 x {s} = {2 * s}
-          </li>
-        ))}
-      </ul>
-    );
+  function sayHello() {
+    alert("Hello");
+  }
+
+  return (
+    <div id="wd-passing-functions">
+      <h2>Lab 4</h2>
+      <ClickEvent />
+      <PassingDataOnEvent/>
+      <PassingFunctions theFunction={sayHello} />
+      <EventObject />
+      <Counter />
+      <BooleanStateVariables />
+      <StringStateVariables />
+      <DateStateVariable />
+      <ObjectStateVariable />
+      <ArrayStateVariable />
+      <ParentStateComponent />
+      {/* <ChildStateComponent /> */}
+      <ReduxExamples/>
+      <TodoList />
+    </div>
+  );
 }

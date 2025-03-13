@@ -1,75 +1,62 @@
+import { ListGroup } from "react-bootstrap";
+import AssignmentControls from "./AssignmentControls";
+import { BsGripVertical } from "react-icons/bs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import AssignmentControlButtons from "./AssignmentControlButtons";
+import { MdEditDocument } from "react-icons/md";
 import { useParams } from "react-router";
-import * as db from "../../Database"; // Import assignments from database
-import { Button, Container, Form, ListGroup, Row, Col, InputGroup } from "react-bootstrap";
-import { FaCheckCircle, FaEllipsisV, FaSearch, FaRegFileAlt } from "react-icons/fa"; // Import document icon
-import { BsGripVertical } from "react-icons/bs"; // Import drag handle icon
-import "./assignments.css";
-
+// import { assignments } from "../../Database";
+import { parse, format } from "date-fns";
+import { useDispatch, useSelector } from "react-redux";
+import { setAssignment } from "./reducer";
+import IndividualAssignmentControlButtons from "./IndividualAssignmentControlButtons";
 export default function Assignments() {
-  const { cid } = useParams(); // Get Course ID from URL
-  const assignments = db.assignments || []; // Ensure assignments data exists
-
-  // Filter assignments based on selected course
-  const filteredAssignments = assignments.filter((assignment) => assignment.course === cid);
-
+  const { assignments } = useSelector((state: any) => state.assignmentReducer);
+  const {cid} = useParams();
+  const dispatch = useDispatch();
+  const formatDate = (dateString: string) => {
+    const parsedDate = parse(dateString, "yyyy-MM-dd", new Date());
+    return format(parsedDate, "MMMM d, yyyy");
+  };
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
   return (
-    <Container fluid className="p-3">
-      {/* Search and Buttons */}
-      <Row className="mb-3">
-        <Col md={6}>
-          <InputGroup>
-            <InputGroup.Text className="bg-white text-muted">
-              <FaSearch />
-            </InputGroup.Text>
-            <Form.Control type="text" placeholder="Search..." />
-          </InputGroup>
-        </Col>
-        <Col md="auto">
-          <Button variant="light" className="me-2">+ Group</Button>
-          <Button variant="danger">+ Assignment</Button>
-        </Col>
-      </Row>
-
-      {/* Assignments Header */}
-      <div className="d-flex justify-content-between align-items-center p-2 bg-light border">
-        <strong>ASSIGNMENTS</strong>
-        <Button variant="light" size="sm">40% of Total</Button>
-      </div>
-
-      {/* Assignment List */}
-      <ListGroup>
-        {filteredAssignments.length > 0 ? (
-          filteredAssignments.map((assignment) => (
-            <ListGroup.Item key={assignment._id} className="assignment-item d-flex align-items-center">
-              {/* Left-side Icons: BsGripVertical + Document Icon */}
-              <div className="d-flex align-items-center me-3">
-                <BsGripVertical className="text-secondary fs-5" />
-                <FaRegFileAlt className="text-success ms-2 fs-5" /> {/* Document Icon */}
-              </div>
-
-              {/* Assignment Content */}
-              <div className="flex-fill">
-                <a href={`#/Kambaz/Courses/${cid}/Assignments/${assignment._id}`} className="assignment-link">
-                  <strong>{assignment.title}</strong>
-                </a>
-                <p className="text-muted mb-1">
-                  <span className="text-danger">Multiple Modules</span> | 
-                  <strong> Not available until</strong> May 6 at 12:00 AM
-                </p>
-                <p className="text-muted">Due May 13 at 11:59 PM | 100 pts</p>
-              </div>
-
-              {/* Right-side Icons */}
-              <div>
-                <FaCheckCircle className="text-success me-3 fs-5" />
-                <FaEllipsisV className="text-muted fs-5" />
-              </div>
+    <div id="wd-assignments">
+      {currentUser.role === "FACULTY" && <AssignmentControls />}<br /><br /><br /><br />
+      <ListGroup className="rounded-0" id="wd-modules">
+        <ListGroup.Item className="wd-module p-0 mb-5 fs-5 border-gray">
+          <div className="wd-title p-3 ps-2 bg-secondary1" id="wd-assignments-title"><BsGripVertical className="me-2 fs-3" /><FontAwesomeIcon icon={faCaretDown} /> ASSIGNMENTS<AssignmentControlButtons />
+          </div>
+          <ListGroup className="wd-lesson rounded-0" id="wd-assignment-list">
+          {assignments
+          .filter((assignment: any) => assignment.course === cid)
+          .map((assignment: any) => (
+            <ListGroup.Item className="wd-lesson p-3 ps-1 wd-assignment-list-item">
+              <div className="d-flex">
+                <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <BsGripVertical className="me-2 fs-3" />
+                </span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <MdEditDocument className="me-2 fs-3" style={{ color: '#008000' }} />
+                </span>
+                <div className="position-relative flex-grow-1">
+                  <IndividualAssignmentControlButtons deleteAssignmentId={assignment._id}/>
+                  {currentUser.role === "FACULTY" ? (<a className="wd-assignment-link text-black link-underline link-underline-opacity-0" href={`#/Kambaz/Courses/${cid}/Assignments/${assignment._id}`} onClick={() => dispatch(setAssignment(assignment))}>
+                    <b>{assignment.title}</b>
+                  </a>):(
+                    <b>{assignment.title}</b>
+                  )}
+                  <div>
+                    <p><text className="text-danger">Multiple Modules</text> | <b>Not Available until</b> {formatDate(assignment.notUntilDate)} at {assignment.time} | <b>Due</b> {formatDate(assignment.dueDate)} at {assignment.time} | {assignment.points} pts</p>
+                  </div>
+                </div></div>
             </ListGroup.Item>
-          ))
-        ) : (
-          <p className="text-muted p-3">No assignments available for this course.</p>
-        )}
+            ))}
+          </ListGroup>
+        </ListGroup.Item>
+
       </ListGroup>
-    </Container>
+
+    </div>
   );
 }
