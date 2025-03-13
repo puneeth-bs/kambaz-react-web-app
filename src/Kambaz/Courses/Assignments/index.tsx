@@ -7,7 +7,7 @@ import AssignmentControlButtons from "./AssignmentControlButtons";
 import { MdEditDocument } from "react-icons/md";
 import { useParams } from "react-router";
 // import { assignments } from "../../Database";
-import { parse, format } from "date-fns";
+// import { parse, format } from "date-fns";
 import { useDispatch, useSelector } from "react-redux";
 import { setAssignment } from "./reducer";
 import IndividualAssignmentControlButtons from "./IndividualAssignmentControlButtons";
@@ -15,10 +15,6 @@ export default function Assignments() {
   const { assignments } = useSelector((state: any) => state.assignmentReducer);
   const {cid} = useParams();
   const dispatch = useDispatch();
-  const formatDate = (dateString: string) => {
-    const parsedDate = parse(dateString, "yyyy-MM-dd", new Date());
-    return format(parsedDate, "MMMM d, yyyy");
-  };
   const { currentUser } = useSelector((state: any) => state.accountReducer);
   return (
     <div id="wd-assignments">
@@ -47,7 +43,7 @@ export default function Assignments() {
                     <b>{assignment.title}</b>
                   )}
                   <div>
-                    <p><text className="text-danger">Multiple Modules</text> | <b>Not Available until</b> {formatDate(assignment.notUntilDate)} at {assignment.time} | <b>Due</b> {formatDate(assignment.dueDate)} at {assignment.time} | {assignment.points} pts</p>
+                    <p><text className="text-danger">Multiple Modules</text> | <b>Not Available until</b> {(assignment.notUntilDate)} | <b>Due</b> {(assignment.dueDate)} | {assignment.points} pts</p>
                   </div>
                 </div></div>
             </ListGroup.Item>
