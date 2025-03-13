@@ -1,30 +1,16 @@
-import { NavLink } from "react-router-dom";
-import "../styles.css"; 
-
+import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 export default function AccountNavigation() {
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
+  const links = currentUser ? ["Profile"] : ["Signin", "Signup"];
+  const { pathname } = useLocation();
   return (
     <div id="wd-account-navigation" className="wd list-group fs-5 rounded-0">
-      <NavLink 
-        to="/Kambaz/Account/Signin"
-        id="wd-account-signin-link"
-        className="list-group-item border border-0 text-danger"
-      >
-        Signin
-      </NavLink>
-      <NavLink 
-        to="/Kambaz/Account/Signup"
-        id="wd-account-signup-link"
-        className="list-group-item border border-0 text-danger"
-      >
-        Signup
-      </NavLink>
-      <NavLink 
-        to="/Kambaz/Account/Profile"
-        id="wd-account-profile-link"
-        className="list-group-item border border-0 text-danger"
-      >
-        Profile
-      </NavLink>
+      {links.map((link)=>(
+        <Link to={`/Kambaz/Account/${link}`}  className={`list-group-item text-danger border border-0 ${pathname.includes(link) ? "active" : ""}`}> {link}  </Link>
+      ))}
+      {/* <Link to={`/Kambaz/Account/Signin`}  className="list-group-item text-danger border border-0 active"> Signin  </Link>
+      <Link to={`/Kambaz/Account/Signup`}  className="list-group-item text-danger border border-0"> Signup  </Link>
+      <Link to={`/Kambaz/Account/Profile`} className="list-group-item text-danger border border-0"> Profile </Link> */}
     </div>
-  );
-}
+);}
