@@ -19,19 +19,23 @@ export default function ModulesControls(
                     Publish All</button>
                 <ul className="dropdown-menu">
                     <li>
+                    {/* eslint-disable-next-line */}
                         <a id="wd-publish-all-modules-and-items-btn" className="dropdown-item" href="#">
                             <GreenCheckmark />
                             Publish all modules and items</a>
                     </li>
                     <li>
+                        {/* eslint-disable-next-line */}
                         <a id="wd-publish-modules-only-button" className="dropdown-item" href="#">
                             <GreenCheckmark />
                             Publish modules only</a>
                     </li>
+                    {/* eslint-disable-next-line */}
                     <li>
                         <a id="wd-unpublish-all-modules-and-items-btn" className="dropdown-item" href="#">
                             <MdDoNotDisturbAlt className="me-1 fs-5" />
                             Unpublish all modules and items</a>
+                            {/* eslint-disable-next-line */}
                     </li>
                     <li>
                         <a id="wd-unpublish-modules-only-button" className="dropdown-item" href="#">

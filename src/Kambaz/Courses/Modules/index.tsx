@@ -24,6 +24,7 @@ export default function Modules() {
   };
   useEffect(() => {
     fetchModules();
+    // eslint-disable-next-line
   }, []);
   const createModuleForCourse = async () => {
     if (!cid) return;

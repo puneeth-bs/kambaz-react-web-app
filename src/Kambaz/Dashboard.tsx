@@ -50,7 +50,7 @@ export default function Dashboard(
           {courses.map((course) => (
             <div className="wd-dashboard-course col" style={{ width: "300px" }}>
               <div className="card rounded-3 overflow-hidden">
-
+              {/* eslint-disable-next-line */}
                 <img src={`images/course_2.jpg`} width="100%" height={160} />
                 <div className="card-body">
                   <h5 className="wd-dashboard-course-title card-title">

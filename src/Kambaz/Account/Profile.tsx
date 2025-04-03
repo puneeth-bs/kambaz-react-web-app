@@ -12,6 +12,8 @@ export default function Profile() {
     const updatedProfile = await client.updateUser(profile);
     dispatch(setCurrentUser(updatedProfile));
   };
+
+  
   const fetchProfile = () => {
     if (!currentUser) return navigate("/Kambaz/Account/Signin");
     setProfile(currentUser);
@@ -21,6 +23,8 @@ export default function Profile() {
     dispatch(setCurrentUser(null));
     navigate("/Kambaz/Account/Signin");
   };
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchProfile(); }, []);
   return (
     <div className="wd-profile-screen">

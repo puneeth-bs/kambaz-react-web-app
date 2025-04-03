@@ -64,6 +64,7 @@ export default function Kambaz() {
     } else {
       findCoursesForUser();
     }
+    //eslint-disable-next-line
   }, [currentUser, enrolling]);
   const [course, setCourse] = useState<any>({
     _id: "0", name: "New Course", number: "New Number",
@@ -80,7 +81,7 @@ export default function Kambaz() {
     setCourses([...courses, newCourse]);
     //dispatch(addEnrollment({ user: currentUser._id, course: newCourse._id }))
   };
-
+  // eslint-disable-next-line
   const deleteCourse = async (courseId: string) => {
     const status = await courseClient.deleteCourse(courseId);
     setCourses(courses.filter((course) => course._id !== courseId));

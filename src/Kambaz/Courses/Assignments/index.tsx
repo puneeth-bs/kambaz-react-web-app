@@ -27,8 +27,10 @@ export default function Assignments() {
     const modules = await assignmentClient.fetchAssignmentsForCourse(cid as string);
     dispatch(setAssignments(modules));
   };
+  
   useEffect(() => {
     fetchAllAssignments();
+    // eslint-disable-next-line
   }, []);
 
   const removeAssignment = async (assignmentId: string) => {
