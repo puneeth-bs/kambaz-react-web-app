@@ -17,7 +17,7 @@ export default function KambazNavigation() {
   return (
     <div id="wd-kambaz-navigation" style={{ width: 105 }}
       className="list-group rounded-0 position-fixed bottom-0 top-0 d-none d-md-block bg-black z-2">
-      <a href="https://www.northeastern.edu/" id="wd-neu-link" target="_blank"
+      <a href="https://www.northeastern.edu/" id="wd-neu-link" target="_blank" rel="noreferrer"
         className="list-group-item bg-black border-0 text-center">
         <img src="/images/NEU.png" width="75px" />
       </a>
